@@ -14,23 +14,86 @@
     <link rel="stylesheet" href="style.css" />
     <title>Start New Project</title>
   </head>
-  <body>
+  <body class="section-space" style="--section-space: 5rem">
+    <!-- skip to content -->
+    <a href="#main-content" class="skip-to-content">Skip To Content</a>
+
+    <div class="wrapper">
+      <p>Press tab to try "skip to content"</p>
+    </div>
+
+    <!-- wrapper size -->
     <div
-      class="container mb-10"
+      class="wrapper mb-10"
       style="border: 3px solid var(--brand); text-align: center"
     >
-      <h1>Container Size</h1>
+      <h1>wrapper Size</h1>
     </div>
-    <div class="container">
-      <h2 class="mb-3">Spacing</h2>
-      <p class="mb-1">
+
+    <!-- layout -->
+    <div class="wrapper flow">
+      <h2>Layout utilities</h2>
+      <div class="flex">
+        <span class="bold">flex</span>
+        <p>
+          provide display flex with default gap "1rem" can adjust with "--gap"
+          custom property and "align-items: center".
+        </p>
+      </div>
+      <div class="flex">
+        <span class="bold">grid</span>
+        <p>
+          provide display grid with default gap "1rem" with default gap "1rem"
+          can adjust with "--gap" custom property.
+        </p>
+      </div>
+      <div class="flex">
+        <span class="bold not-break">equal-columns</span>
+        <p>
+          make equal columns using display grid with default gap "1rem" with
+          default gap "1rem" can adjust with "--gap" custom property, the
+          columns are minimum "200px" wide and maximum "1fr".
+        </p>
+      </div>
+      <div class="flex">
+        <span class="bold">d-block</span>
+        <p>provide "display: block".</p>
+      </div>
+      <div class="flex">
+        <span class="bold">flow</span>
+        <p>
+          give all direct children default "margin-top: 1rem" behalf the first
+          one, the margin can adjust with "--flow-space" custom property.
+        </p>
+      </div>
+      <div class="flex">
+        <span class="bold not-break">flow--space-small</span>
+        <p>
+          give all direct children default "margin-top: 0.75rem" behalf the
+          first one, the margin can adjust with "--flow-space" custom property.
+        </p>
+      </div>
+      <div class="flex">
+        <span class="bold not-break">section-space</span>
+        <p>
+          it use to add enough space between sections which give all direct
+          children default "margin-top: 3rem" behalf the first one, the margin
+          can adjust with "--section-space" custom property.
+        </p>
+      </div>
+    </div>
+
+    <!-- spacing -->
+    <div class="wrapper flow">
+      <h2 class="">Spacing</h2>
+      <p class="">
         We can use "mb" for margin-block and "mi" for margin-inline.
       </p>
-      <p class="mb-1">
+      <p class="">
         We can also use "p" for padding, "pb" padding-block and "pi" for
         padding-inline.
       </p>
-      <div class="equal-columns mb-5">
+      <div class="equal-columns">
         <div>
           <div class="flex space-box">
             <p>m-0</p>
@@ -401,7 +464,7 @@
         </div>
       </div>
     </div>
-    <div class="container">
+    <div class="wrapper flow">
       <h2 class="mb-3">Background Colors</h2>
       <div class="equal-columns">
         <div class="box">Surface 1</div>
@@ -410,38 +473,40 @@
         <div class="box">Surface 4</div>
       </div>
     </div>
-    <div class="container">
+
+    <!-- typography -->
+    <div class="wrapper flow">
       <h2 class="mb-3">Font size</h2>
 
-      <div class="flex mb-2">
+      <div class="flex">
         <span>fs-200</span>
         <p class="fs-200">Whereas recognition of the inherent dignity</p>
       </div>
-      <div class="flex mb-2">
+      <div class="flex">
         <span>fs-300</span>
         <p class="fs-300">Whereas recognition of the inherent dignity</p>
       </div>
-      <div class="flex mb-2">
+      <div class="flex">
         <span>fs-400</span>
         <p class="fs-400">Whereas recognition of the inherent dignity</p>
       </div>
-      <div class="flex mb-2">
+      <div class="flex">
         <span>fs-500</span>
         <p class="fs-500">Whereas recognition of the inherent dignity</p>
       </div>
-      <div class="flex mb-2">
+      <div class="flex">
         <span>fs-600</span>
         <p class="fs-600">Whereas recognition of the inherent dignity</p>
       </div>
-      <div class="flex mb-2">
+      <div class="flex">
         <span>fs-700</span>
         <p class="fs-700">Whereas recognition of the inherent dignity</p>
       </div>
-      <div class="flex mb-2">
+      <div class="flex">
         <span>fs-800</span>
         <p class="fs-800">Whereas recognition of the inherent dignity</p>
       </div>
-      <div class="flex mb-2">
+      <div class="flex">
         <span>fs-900</span>
         <p class="fs-900">Whereas recognition of the inherent dignity</p>
       </div>
@@ -464,6 +529,7 @@
         <div class="uppercase">recognition</div>
       </div>
     </div>
+    <main id="main-content">Main Content</main>
 
     <script src="main.js"></script>
   </body>

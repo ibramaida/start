@@ -260,6 +260,10 @@ select {
   align-items: center;
 }
 
+.not-break {
+  min-width: max-content;
+}
+
 .grid {
   display: grid;
   gap: var(--gap, 1rem);
@@ -283,7 +287,11 @@ select {
   --flow-space: 0.75rem;
 }
 
-.container {
+.section-space > *:where(:not(:first-child)) {
+  margin-top: var(--section-space, 3rem);
+}
+
+.wrapper {
   /* padding-inline: 1em; */
   margin-inline: auto;
   inline-size: min(60rem, 100% - 2rem);
@@ -303,6 +311,7 @@ select {
 
 .skip-to-content {
   position: absolute;
+  top: 0;
   z-index: 9999;
   background: hsl(var(--clr-white));
   color: hsl(var(--clr-dark));
@@ -340,6 +349,10 @@ select {
 
 .uppercase {
   text-transform: uppercase;
+}
+
+.bold {
+  font-weight: 700;
 }
 
 .fs-900 {
@@ -925,6 +938,15 @@ select {
   padding-inline: calc(var(--spacing-const) * 29);
 }
 /* ############################################################################# */
+
+h2 {
+  text-decoration-line: underline;
+  text-decoration-style: wavy;
+  text-decoration-color: var(--brand);
+  text-decoration-thickness: 2px;
+  /* text-underline-offset: 8px; */
+  text-underline-position: under;
+}
 
 .space-box {
   --gap: 3rem;
