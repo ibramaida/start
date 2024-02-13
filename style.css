@@ -64,6 +64,28 @@
   --surface-shadow: var(--surface-shadow-light);
   --shadow-strength: var(--shadow-strength-light);
 
+  /* color shades */
+
+  /* Base color */
+  /* --brand-500: hsl(var(--brand-hue), 100%, 50%); */
+  --brand-500: hsl(
+    var(--brand-hue),
+    var(--brand-saturation),
+    var(--brand-lightness)
+  );
+
+  /* Lighter shades */
+  --brand-600: hsl(var(--brand-hue), calc(100% - 10%), calc(50% + 10%));
+  --brand-700: hsl(var(--brand-hue), calc(100% - 20%), calc(50% + 20%));
+  --brand-800: hsl(var(--brand-hue), calc(100% - 30%), calc(50% + 30%));
+  --brand-900: hsl(var(--brand-hue), calc(100% - 40%), calc(50% + 40%));
+
+  /* Darker shades */
+  --brand-400: hsl(var(--brand-hue), calc(100% + 10%), calc(50% - 10%));
+  --brand-300: hsl(var(--brand-hue), calc(100% + 20%), calc(50% - 20%));
+  --brand-200: hsl(var(--brand-hue), calc(100% + 30%), calc(50% - 30%));
+  --brand-100: hsl(var(--brand-hue), calc(100% + 40%), calc(50% - 40%));
+
   /* font-sizes */
   --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
   --fs-800: 3.5rem;
@@ -974,4 +996,11 @@ h2 {
 
 .box:nth-child(4) {
   background-color: var(--surface4);
+}
+
+.color-shades .flex {
+  flex-wrap: wrap;
+}
+.color-shades .box {
+  padding: 1rem;
 }
