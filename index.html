@@ -23,16 +23,49 @@
     </div>
 
     <!-- wrapper size -->
-    <div
-      class="wrapper mb-10"
-      style="border: 3px solid var(--brand); text-align: center"
-    >
-      <h1>wrapper Size</h1>
+    <div class="wrapper flow">
+      <h1 style="border: 3px solid var(--brand); text-align: center">
+        Content Size
+      </h1>
+      <h1
+        class="breakout"
+        style="border: 3px solid var(--brand); text-align: center"
+      >
+        Breakout Size
+      </h1>
+      <h1
+        class="full-width"
+        style="border: 3px solid var(--brand); text-align: center"
+      >
+        Full width Size
+      </h1>
     </div>
 
     <!-- layout -->
     <div class="wrapper flow">
-      <h2>Layout utilities</h2>
+      <h2 class="breakout">Layout utilities</h2>
+      <div class="flex">
+        <span class="bold">wrapper</span>
+        <p>
+          Creative wrapper that use a grid hack to be able to choose the size of
+          the content. the default size is 900px can adjusted with
+          "--content-max-width" custom property.
+        </p>
+      </div>
+      <div class="flex">
+        <span class="bold">breakout</span>
+        <p>
+          Break the content a little bit out, this size can be adjusted with
+          those custom properties "--breakout-max-width" and "--breakout-size".
+        </p>
+      </div>
+      <div class="flex">
+        <span class="bold">full-width</span>
+        <p>
+          Make full width sections while maintaining the content within the max
+          content size, can be using for photos as wel.
+        </p>
+      </div>
       <div class="flex">
         <span class="bold">flex</span>
         <p>
@@ -83,9 +116,24 @@
       </div>
     </div>
 
+    <div class="wrapper flow">
+      <h2 class="breakout">Accessability classes</h2>
+      <div class="flex">
+        <span class="bold">sr-only</span>
+        <p>Make the element visually hidden only for the screen reader.</p>
+      </div>
+      <div class="flex">
+        <span class="bold">skip-to-content</span>
+        <p>
+          Make skip to content button that trigger when a tab pressed on
+          keyboard.
+        </p>
+      </div>
+    </div>
+
     <!-- spacing -->
     <div class="wrapper flow">
-      <h2 class="">Spacing</h2>
+      <h2 class="breakout">Spacing</h2>
       <p class="">
         We can use "mb" for margin-block and "mi" for margin-inline.
       </p>
@@ -466,8 +514,11 @@
     </div>
 
     <!-- background colors / surface colors -->
-    <div class="wrapper flow">
-      <h2>Background Colors</h2>
+    <div
+      class="wrapper full-width flow pb-10"
+      style="background-color: var(--brand-600)"
+    >
+      <h2 class="breakout">Background Colors</h2>
       <div class="equal-columns">
         <div class="box">Surface 1</div>
         <div class="box">Surface 2</div>
@@ -478,7 +529,7 @@
 
     <!-- color shades -->
     <div class="wrapper flow color-shades">
-      <h2>Color Shades</h2>
+      <h2 class="breakout">Color Shades</h2>
       <div class="flex">
         <div class="box" style="background: var(--brand-100)">--brand-100</div>
         <div class="box" style="background: var(--brand-200)">--brand-200</div>
@@ -494,7 +545,7 @@
 
     <!-- typography -->
     <div class="wrapper flow">
-      <h2 class="mb-3">Font size</h2>
+      <h2 class="breakout">Typography</h2>
 
       <div class="flex">
         <span>fs-200</span>
@@ -529,7 +580,7 @@
         <p class="fs-900">Whereas recognition of the inherent dignity</p>
       </div>
 
-      <h2 class="mb-5">Letter Spacing</h2>
+      <h2 class="breakout">Letter Spacing</h2>
       <div class="flex">
         <span>letter-spacing-1</span>
         <div class="letter-spacing-1">recognition</div>

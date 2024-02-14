@@ -87,7 +87,7 @@
   --brand-100: hsl(var(--brand-hue), calc(100% + 40%), calc(50% - 40%));
 
   /* font-sizes */
-  --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
+  --fs-900: clamp(4rem, 8vw + 1rem, 9.375rem);
   --fs-800: 3.5rem;
   --fs-700: 1.5rem;
   --fs-600: 1rem;
@@ -313,10 +313,49 @@ select {
   margin-top: var(--section-space, 3rem);
 }
 
+/**************************************** full width **************************************************/
 .wrapper {
-  /* padding-inline: 1em; */
-  margin-inline: auto;
-  inline-size: min(60rem, 100% - 2rem);
+  --padding-inline: 1rem;
+  --content-max-width: 900px;
+  --breakout-max-width: 1200px;
+
+  --breakout-size: calc(
+    (var(--breakout-max-width) - var(--content-max-width)) / 3.5
+  );
+
+  display: grid;
+  grid-template-columns:
+    [full-width-start] minmax(var(--padding-inline), 1fr)
+    [breakout-start] minmax(0, var(--breakout-size))
+    [content-start] min(
+      100% - (var(--padding-inline) * 2),
+      var(--content-max-width)
+    )
+    [content-end]
+    minmax(0, var(--breakout-size)) [breakout-end]
+    minmax(var(--padding-inline), 1fr) [full-width-end];
+}
+
+.wrapper > :not(.breakout, .full-width),
+.full-width > :not(.breakout, .full-width) {
+  grid-column: content;
+}
+
+.wrapper > .breakout {
+  grid-column: breakout;
+}
+
+.wrapper > .full-width {
+  grid-column: full-width;
+
+  display: grid;
+  /* grid-template-columns: inherit; */
+}
+
+img.full-width {
+  width: 100%;
+  max-height: 45vh;
+  object-fit: cover;
 }
 
 .sr-only {
@@ -334,11 +373,11 @@ select {
 .skip-to-content {
   position: absolute;
   top: 0;
+  width: max-content;
   z-index: 9999;
   background: hsl(var(--clr-white));
   color: hsl(var(--clr-dark));
   padding: 0.5em 1em;
-  margin-inline: auto;
   transform: translateY(-100%);
   transition: transform 250ms ease-in;
 }
